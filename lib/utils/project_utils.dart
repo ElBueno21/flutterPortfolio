@@ -1,0 +1,86 @@
+class ProjectUtils {
+  final List<String> images;
+  final String title;
+  final String subtitle;
+  final String? moreInfo;
+  final String? androidLink;
+  final String? iosLink;
+  final String? webLink;
+
+  ProjectUtils({
+    required this.images,
+    required this.title,
+    required this.subtitle,
+    this.moreInfo,
+    this.androidLink,
+    this.iosLink,
+    this.webLink,
+  });
+}
+
+// ###############
+// HOBBY PROJECTS
+List<ProjectUtils> hobbyProjectUtils = [
+  ProjectUtils(
+    images: [
+      'assets/projects/youtubeMain.png',
+      'assets/projects/youtube1.png',
+      'assets/projects/youtube2.png',
+      'assets/projects/youtube3.png',
+      'assets/projects/youtube4.png',
+    ],
+    title: 'YouTube Video Downloader Website',
+    subtitle:
+        'This is for educational purposes, This is a website where you can download most YouTube Videos via a link',
+    moreInfo:
+        "I created this project out of curiosity about how YouTube downloader websites operate. To download the videos, I used this program called yt-dlp, https://github.com/yt-dlp/yt-dlp. I also used Google APIs, specifically the YouTube API, to fetch the video’s thumbnail and name from the URL. Once the data is captured, I present a download button. When pressed, the video gets saved in a folder on my Orange Pi 5 Server as a webm file.\nNote: Some links may not work due to copyright issues.",
+    webLink: 'https://op.zephyrus.app/youtube/yt-home.php',
+  ),
+  ProjectUtils(
+    images: [
+      'assets/projects/orangePiFiveMain.png',
+      'assets/projects/orangePiFive1.png',
+      'assets/projects/orangePiFive2.png',
+      'assets/projects/orangePiFive3.png',
+      'assets/projects/orangePiFive4.png',
+    ],
+    title: 'Orange Pi 5 (8GB)',
+    subtitle:
+        'This is a ARM linux device similar to the Raspberry Pi where I run a NAS, WebServer, NFTY (Reminder Server), Scripts, and use Cloud Flare Zero Trust to communicate with my server on the internet.',
+    moreInfo:
+        "Before getting the Orange Pi 5, I was using a Raspberry Pi 3B+ for most of my tasks, like running a NAS, automated scripts (like sending text messages, via Textbelt, to remind me to take out the trash), and managing my Docker containers. However, I noticed the Raspberry Pi's performance was a bit sluggish, so I considered upgrading to the Raspberry Pi 4. However, due to the chip shortage, it was tough to get one, so I looked for alternatives and found the Orange Pi 5. I've been using it for over two years now and haven't had a single complaint. It was a very welcome upgrade, and I continue to use it weekly.",
+    webLink:
+        'http://www.orangepi.org/html/hardWare/computerAndMicrocontrollers/details/Orange-Pi-5.html',
+  ),
+  ProjectUtils(
+    images: ['assets/projects/HomeLab.png'],
+    title: 'HomeLab',
+    subtitle:
+        'This is HomeLab I have at home where I use a Synology NAS, Proxmox Server, and a Ubiquiti Dream Machine Special Edition. ',
+    moreInfo:
+        'This is HomeLab I have at home where I use a Synology NAS for the families personal files, Proxmox Server for all my Linux test enviorments, and I use a Ubiquit Dream Machine Special Edition for manageing my network here at home.',
+  ),
+];
+
+// ###############
+// WORK PROJECTS
+List<ProjectUtils> workProjectUtils = [
+  ProjectUtils(
+    images: ['assets/projects/m8systems.png'],
+    title: 'M8 Systems FieldM8 App',
+    subtitle:
+        'This is an IoT Irrigation, fertigation and fluid flow management System for Ag.',
+    androidLink:
+        'https://play.google.com/store/apps/details?id=com.m8systems.fieldm8&hl=en_US',
+    iosLink: "https://apps.apple.com/us/app/m8-systems-fieldm8/id1604691850",
+    webLink: "https://www.m8systems.com/",
+  ),
+  ProjectUtils(
+    images: ['assets/projects/goldenboysdetailing.png'],
+    title: 'Golden Boys Detailing Website',
+    subtitle: 'This is a responsive online website for car detailing.',
+    moreInfo:
+        "I created this website for my cousin's detailing business. Right now, it's a simple static site, but as his business grows, we plan to upgrade to a dynamic booking website where customers can schedule appointments directly instead of contacting him through Instagram. So if you're in the Bakersfield, CA area and need a car detailing, reach out to him on Instagram.",
+    webLink: 'https://goldenboysdetailing.net/',
+  ),
+];
