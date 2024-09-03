@@ -32,8 +32,7 @@ class _ContactSectionState extends State<ContactSection> {
     final String email = _emailController.text;
     final String message = _messageController.text;
 
-    final Uri uri = Uri.parse(
-        'https://flutter.zephyrus.app/send-email'); // Replace with your server address
+    final Uri uri = Uri.parse('https://flutter-email.zephyrus.app/send-email');
 
     final response = await http.post(
       uri,

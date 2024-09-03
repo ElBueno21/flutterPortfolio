@@ -42,7 +42,7 @@ List<ProjectUtils> hobbyProjectUtils = [
     subtitle:
         'This is HomeLab I have at home where I use a Synology NAS, Proxmox Server, and a Ubiquiti Dream Machine Special Edition. ',
     moreInfo:
-        'This is HomeLab I have at home where I use a Synology NAS for the families personal files, Proxmox Server for all my Linux test enviorments, and I use a Ubiquit Dream Machine Special Edition for manageing my network here at home.',
+        'This is HomeLab I have at home where I use a Synology NAS for the families personal files, Proxmox Server for all my Linux test environments, and I use a Ubiquit Dream Machine Special Edition for managing my network here at home.',
   ),
 ];
 
