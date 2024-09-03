@@ -44,7 +44,7 @@ class SkillsMobile extends StatelessWidget {
           Column(
             children: [
               const Text(
-                "Programing Languages And Tools",
+                "Programming Languages And Tools",
                 style: TextStyle(
                   fontSize: 20.0,
                   fontWeight: FontWeight.w800,

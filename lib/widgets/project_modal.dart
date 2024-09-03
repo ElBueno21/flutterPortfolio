@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio_website/constants/colors.dart';
 import 'package:my_portfolio_website/utils/project_utils.dart';
-
+import 'package:photo_view/photo_view.dart';
 import 'dart:js' as js;
 
 class ProjectModal extends StatefulWidget {
@@ -79,7 +79,6 @@ class _ProjectModalState extends State<ProjectModal> {
                       fontSize: 16.0,
                     ),
                   ),
-
             const SizedBox(height: 10.0),
             Expanded(
               child: Stack(
@@ -88,13 +87,61 @@ class _ProjectModalState extends State<ProjectModal> {
                     controller: _pageController,
                     itemCount: widget.project.images.length,
                     itemBuilder: (context, index) {
-                      return SizedBox(
-                        width: double.infinity,
-                        child: Image.asset(
-                          widget.project.images[index],
-                          fit: BoxFit.contain,
+                      return GestureDetector(
+                        onTap: () {
+                          showDialog(
+                            context: context,
+                            builder: (context) => Dialog(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Stack(
+                                alignment: Alignment.bottomCenter,
+                                children: [
+                                  PhotoView(
+                                    imageProvider: AssetImage(
+                                        widget.project.images[index]),
+                                    minScale: PhotoViewComputedScale.contained,
+                                    maxScale:
+                                        PhotoViewComputedScale.covered * 2,
+                                    backgroundDecoration: BoxDecoration(
+                                      color: Theme.of(context).canvasColor,
+                                    ),
+                                  ),
+                                  Positioned(
+                                    bottom: 10,
+                                    child: ElevatedButton(
+                                      onPressed: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                      child: const Text(
+                                        "Close",
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          );
+                        },
+                        child: PhotoView(
+                          imageProvider:
+                              AssetImage(widget.project.images[index]),
+                          minScale: PhotoViewComputedScale.contained,
+                          maxScale: PhotoViewComputedScale.covered * 2,
+                          backgroundDecoration: BoxDecoration(
+                            color: Theme.of(context).canvasColor,
+                          ),
                         ),
                       );
+                    },
+                    onPageChanged: (index) {
+                      setState(() {
+                        _currentPage = index;
+                      });
                     },
                   ),
                   if (_currentPage > 0)

@@ -23,23 +23,7 @@ class ProjectUtils {
 List<ProjectUtils> hobbyProjectUtils = [
   ProjectUtils(
     images: [
-      'assets/projects/youtubeMain.png',
-      'assets/projects/youtube1.png',
-      'assets/projects/youtube2.png',
-      'assets/projects/youtube3.png',
-      'assets/projects/youtube4.png',
-    ],
-    title: 'YouTube Video Downloader Website',
-    subtitle:
-        'This is for educational purposes, This is a website where you can download most YouTube Videos via a link',
-    moreInfo:
-        "I created this project out of curiosity about how YouTube downloader websites operate. To download the videos, I used this program called yt-dlp, https://github.com/yt-dlp/yt-dlp. I also used Google APIs, specifically the YouTube API, to fetch the video’s thumbnail and name from the URL. Once the data is captured, I present a download button. When pressed, the video gets saved in a folder on my Orange Pi 5 Server as a webm file.\nNote: Some links may not work due to copyright issues.",
-    webLink: 'https://op.zephyrus.app/youtube/yt-home.php',
-  ),
-  ProjectUtils(
-    images: [
       'assets/projects/orangePiFiveMain.png',
-      'assets/projects/orangePiFive1.png',
       'assets/projects/orangePiFive2.png',
       'assets/projects/orangePiFive3.png',
       'assets/projects/orangePiFive4.png',

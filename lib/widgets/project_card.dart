@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio_website/constants/colors.dart';
 import 'package:my_portfolio_website/utils/project_utils.dart';
-
 import 'dart:js' as js;
-
 import 'package:my_portfolio_website/widgets/project_modal.dart';
 
 class ProjectCardWidget extends StatelessWidget {
@@ -11,6 +9,7 @@ class ProjectCardWidget extends StatelessWidget {
     super.key,
     required this.project,
   });
+
   final ProjectUtils project;
 
   @override
