@@ -67,4 +67,13 @@ List<ProjectUtils> workProjectUtils = [
         "I created this website for my cousin's detailing business. Right now, it's a simple static site, but as his business grows, we plan to upgrade to a dynamic booking website where customers can schedule appointments directly instead of contacting him through Instagram. So if you're in the Bakersfield, CA area and need a car detailing, reach out to him on Instagram.",
     webLink: 'https://goldenboysdetailing.net/',
   ),
+  ProjectUtils(
+    images: ['assets/projects/pacificagsolutions.png'],
+    title: 'Pacific Ag Solutions Website',
+    subtitle:
+        'This is a responsive online website for a farm labor contractor.',
+    moreInfo:
+        "I created this website for a client who is a farm labor contractor. The website serves as an online presence for his business, providing information about the services offered and how to contact him. It's a multi-language site that helps him reach potential clients in the agricultural sector.",
+    webLink: 'https://pacificagsolutions.com/',
+  ),
 ];

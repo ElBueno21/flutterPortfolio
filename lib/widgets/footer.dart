@@ -11,7 +11,7 @@ class Footer extends StatelessWidget {
       width: double.maxFinite,
       alignment: Alignment.center,
       child: const Text(
-        "Made By Miguel Bueno Nunez with Flutter 3.22.2",
+        "Made By Miguel Bueno Nunez with Flutter 3.32.3",
         style: TextStyle(
           fontSize: 18.0,
           fontWeight: FontWeight.w400,

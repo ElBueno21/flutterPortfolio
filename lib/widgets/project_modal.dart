@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio_website/constants/colors.dart';
 import 'package:my_portfolio_website/utils/project_utils.dart';
 import 'package:photo_view/photo_view.dart';
-import 'dart:js' as js;
+import 'package:url_launcher/url_launcher.dart';
 
 class ProjectModal extends StatefulWidget {
   final ProjectUtils project;
@@ -176,9 +176,12 @@ class _ProjectModalState extends State<ProjectModal> {
                 children: [
                   if (widget.project.androidLink != null)
                     ElevatedButton(
-                      onPressed: () {
-                        js.context
-                            .callMethod('open', [widget.project.androidLink]);
+                      onPressed: () async {
+                        final url = Uri.parse(widget.project.androidLink!);
+                        if (await canLaunchUrl(url)) {
+                          await launchUrl(url,
+                              mode: LaunchMode.externalApplication);
+                        }
                       },
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
@@ -199,8 +202,12 @@ class _ProjectModalState extends State<ProjectModal> {
                     ),
                   if (widget.project.iosLink != null)
                     ElevatedButton(
-                      onPressed: () {
-                        js.context.callMethod('open', [widget.project.iosLink]);
+                      onPressed: () async {
+                        final url = Uri.parse(widget.project.iosLink!);
+                        if (await canLaunchUrl(url)) {
+                          await launchUrl(url,
+                              mode: LaunchMode.externalApplication);
+                        }
                       },
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
@@ -221,8 +228,12 @@ class _ProjectModalState extends State<ProjectModal> {
                     ),
                   if (widget.project.webLink != null)
                     ElevatedButton(
-                      onPressed: () {
-                        js.context.callMethod('open', [widget.project.webLink]);
+                      onPressed: () async {
+                        final url = Uri.parse(widget.project.webLink!);
+                        if (await canLaunchUrl(url)) {
+                          await launchUrl(url,
+                              mode: LaunchMode.externalApplication);
+                        }
                       },
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
