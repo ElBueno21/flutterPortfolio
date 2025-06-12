@@ -5,7 +5,7 @@ import 'package:my_portfolio_website/constants/sns_links.dart';
 import 'package:my_portfolio_website/widgets/custom_text_field.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import 'dart:js' as js;
+import 'package:url_launcher/url_launcher.dart';
 
 class ContactSection extends StatefulWidget {
   const ContactSection({super.key});
@@ -32,7 +32,7 @@ class _ContactSectionState extends State<ContactSection> {
     final String email = _emailController.text;
     final String message = _messageController.text;
 
-    final Uri uri = Uri.parse('https://flutter-email.zephyrus.app/send-email');
+    final Uri uri = Uri.parse('https://flutter-email.zephyrus.site/send-email');
 
     final response = await http.post(
       uri,
@@ -165,14 +165,20 @@ class _ContactSectionState extends State<ContactSection> {
             alignment: WrapAlignment.center,
             children: [
               InkWell(
-                onTap: () {
-                  js.context.callMethod('open', [SnsLinks.github]);
+                onTap: () async {
+                  final url = Uri.parse(SnsLinks.github);
+                  if (await canLaunchUrl(url)) {
+                    await launchUrl(url, mode: LaunchMode.externalApplication);
+                  }
                 },
                 child: Image.asset("assets/github.png", width: 28.0),
               ),
               InkWell(
-                onTap: () {
-                  js.context.callMethod('open', [SnsLinks.linkedIn]);
+                onTap: () async {
+                  final url = Uri.parse(SnsLinks.linkedIn);
+                  if (await canLaunchUrl(url)) {
+                    await launchUrl(url, mode: LaunchMode.externalApplication);
+                  }
                 },
                 child: Image.asset("assets/linkedin.png", width: 28.0),
               ),

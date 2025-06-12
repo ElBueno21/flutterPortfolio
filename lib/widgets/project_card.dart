@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio_website/constants/colors.dart';
 import 'package:my_portfolio_website/utils/project_utils.dart';
-import 'dart:js' as js;
+import 'package:url_launcher/url_launcher.dart';
 import 'package:my_portfolio_website/widgets/project_modal.dart';
 
 class ProjectCardWidget extends StatelessWidget {
@@ -84,8 +84,12 @@ class ProjectCardWidget extends StatelessWidget {
                   const Spacer(),
                   if (project.iosLink != null)
                     InkWell(
-                      onTap: () {
-                        js.context.callMethod('open', [project.iosLink]);
+                      onTap: () async {
+                        final url = Uri.parse(project.iosLink!);
+                        if (await canLaunchUrl(url)) {
+                          await launchUrl(url,
+                              mode: LaunchMode.externalApplication);
+                        }
                       },
                       child: Image.asset(
                         "assets/ios_icon.png",
@@ -98,8 +102,12 @@ class ProjectCardWidget extends StatelessWidget {
                         left: 6.0,
                       ),
                       child: InkWell(
-                        onTap: () {
-                          js.context.callMethod('open', [project.androidLink]);
+                        onTap: () async {
+                          final url = Uri.parse(project.androidLink!);
+                          if (await canLaunchUrl(url)) {
+                            await launchUrl(url,
+                                mode: LaunchMode.externalApplication);
+                          }
                         },
                         child: Image.asset(
                           "assets/android_icon.png",
@@ -113,8 +121,12 @@ class ProjectCardWidget extends StatelessWidget {
                         left: 6.0,
                       ),
                       child: InkWell(
-                        onTap: () {
-                          js.context.callMethod('open', [project.webLink]);
+                        onTap: () async {
+                          final url = Uri.parse(project.webLink!);
+                          if (await canLaunchUrl(url)) {
+                            await launchUrl(url,
+                                mode: LaunchMode.externalApplication);
+                          }
                         },
                         child: Image.asset(
                           "assets/web_icon.png",

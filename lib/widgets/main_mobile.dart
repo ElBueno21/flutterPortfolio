@@ -26,8 +26,8 @@ class MainMobile extends StatelessWidget {
               shaderCallback: (bounds) {
                 return LinearGradient(
                   colors: [
-                    CustomColor.scaffoldBg.withOpacity(0.6),
-                    CustomColor.scaffoldBg.withOpacity(0.6),
+                    CustomColor.scaffoldBg.withAlpha((0.6 * 255).toInt()),
+                    CustomColor.scaffoldBg.withAlpha((0.6 * 255).toInt()),
                   ],
                   begin: Alignment.bottomCenter,
                   end: Alignment.topCenter,
